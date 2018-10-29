@@ -5,10 +5,10 @@
 	<persistence-unit name="hibernatePU"
 		transaction-type="JTA">
 
-		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
 		<jta-data-source>jdbc/patNegocioPGDS</jta-data-source>
-		
+
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
 		<properties>
@@ -19,6 +19,8 @@
 				value="org.hibernate.transaction.WeblogicTransactionManagerLookup" />
 			<property name="transaction.factory_class"
 				value="org.hibernate.transaction.JTATransactionFactory" />
+
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 
 		</properties>
 

@@ -7,7 +7,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.ejb.Ejb3Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
-
 public class GerarSqlBanco {
 
 	public static void main(String[] args) throws IOException {

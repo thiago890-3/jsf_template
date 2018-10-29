@@ -1,6 +1,5 @@
 package teste.dao;
 
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -15,15 +14,17 @@ public abstract class GenericDAOImpl<T> {
 	private EntityManager em;
 
 	public void persist(T entity) {
-		LOGGER.error("Inserir entidade: [" + entity.getClass().getName() + "]");
+		LOGGER.debug("Inserir entidade: [" + entity.getClass().getName() + "]");
 		getEntityManager().persist(entity);
 	}
 
 	public T merge(T entity) {
+		LOGGER.debug("Atualizar entidade: [" + entity.getClass().getName() + "]");
 		return (T) getEntityManager().merge(entity);
 	}
 
 	public void delete(T entity) {
+		LOGGER.debug("Remover entidade: [" + entity.getClass().getName() + "]");
 		getEntityManager().remove(entity);
 	}
 
